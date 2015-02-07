@@ -22,3 +22,5 @@ export class Models{
     this.debt_amount = '';
   }
 }
+
+//export default new Models();
