@@ -1,0 +1,98 @@
+<template>
+  <section>
+    <h2>Incomes</h2>
+
+    <div class="row">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr repeat.for="income of incomes">
+            <td><input type="text" value.bind="income.name"></td>
+            <td><input type="number" step="0.01" min="0" value.bind="income.amount"></td>
+          </tr>
+        </tbody>
+      </table>
+      <form class="form-inline" role="form" submit.delegate="addIncome()">
+        <div class="form-group">
+          <label for="income-name">Name</label>
+          <input type="text" class="form-control" value.bind="income_name" id="income-name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+          <label for="income-amount">Amount</label>
+          <input type="number" step="0.01" min="0" class="form-control" value.bind="income_amount" id="income-amount" placeholder="Amount" required>
+        </div>
+        <button type="submit" class="btn btn-default">Add Income</button>
+      </form>
+    </div>
+
+    <h2>Expenses</h2>
+
+    <div class="row">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr repeat.for="expense of expenses">
+            <td><input type="text" value.bind="expense.name"></td>
+            <td><input type="number" step="0.01" min="0" value.bind="expense.amount"></td>
+          </tr>
+        </tbody>
+      </table>
+      <form class="form-inline" role="form" submit.delegate="addExpense(expense_name, expense_amount)">
+        <div class="form-group">
+          <label for="expense-name">Name</label>
+          <input type="text" class="form-control" value.bind="expense_name" id="expense-name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+          <label for="expense-amount">Amount</label>
+          <input type="number" step="0.01" min="0" class="form-control" value.bind="expense_amount" id="expense-amount" placeholder="Amount" required>
+        </div>
+        <button type="submit" class="btn btn-default">Add Expense</button>
+      </form>
+    </div>
+
+    <h2>Debt</h2>
+
+    <div class="row">
+      <table class="table table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr repeat.for="debt of debts">
+            <td><input type="text" value.bind="debt.name"></td>
+            <td><input type="number" step="0.01" min="0" value.bind="debt.amount"></td>
+          </tr>
+        </tbody>
+      </table>
+      <form class="form-inline" role="form" submit.delegate="addDebt(debt_name, debt_amount)">
+        <div class="form-group">
+          <label for="debt-name">Name</label>
+          <input type="text" class="form-control" value.bind="debt_name" id="debt-name" placeholder="Name" required>
+        </div>
+        <div class="form-group">
+          <label for="debt-amount">Amount</label>
+          <input type="number" step="0.01" min="0" class="form-control" value.bind="debt_amount" id="debt-amount" placeholder="Amount" required>
+        </div>
+        <div class="form-group">
+          <label for="debt-amount">Interest Rate</label>
+          <input type="number" step="0.01" min="0" class="form-control" value.bind="debt_interest" id="debt-interest" placeholder="Interest Rate" required>%
+        </div>
+        <button type="submit" class="btn btn-default">Add Debt</button>
+      </form>
+    </div>
+
+  </section>
+</template>
