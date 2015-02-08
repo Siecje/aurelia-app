@@ -46,6 +46,7 @@
   },
   "jspm": {
     "dependencies": {
+      "Chart.js": "github:nnnick/Chart.js@^1.0.1",
       "aurelia-bootstrapper": "^0.9.1",
       "aurelia-dependency-injection": "^0.4.1",
       "aurelia-framework": "^0.8.4",

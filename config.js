@@ -9,6 +9,7 @@ System.config({
 
 System.config({
   "map": {
+    "Chart.js": "github:nnnick/Chart.js@1.0.1",
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.9.3",
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.2",
     "aurelia-framework": "github:aurelia/framework@0.8.6",

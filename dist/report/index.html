@@ -1,15 +1,19 @@
-<template>
-  <section>
-      <h2>Report</h2>
-      <div class="row">
-        <div class="col-sm-12">
-          <p>Total Income ${totalIncome}</p>
-          <p>Total Expenses ${totalExpenses}</p>
-          <p>Total Debt ${totalDebt}</p>
-          <p>Debt Expenses ${totalDebtExpenses}</p>
-          <p>Your Debt after this month: ${debtLeft}</p>
-          <p if.bind="extraMondey === 0">You need to remove some items from your expenses</p>
-        </div>
-      </div>
-  </section>
-</template>
+<template><section>
+<h2>Report</h2>
+
+<p>Monthly Income: $${totalIncome}</p>
+<p>Monthly Expenses: $${totalExpenses + totalBills}</p>
+<p>Total Debt: $${totalDebt}</p>
+<p>New Debt from Interest: $${newDebt}</p>
+<div if.bind="extraMoney > 0">
+  <p>Money to put towards debt: $${extraMoney}</p>
+  <p>You should but this money towards: <strong>${target.name}</strong></p>
+  <p>You will be debt free in months</p>
+</div>
+<p>Your Debt after this month: $${(debtLeft-extraMoney).toFixed(2)}</p>
+
+<p if.bind="extraMoney === 0">You need to remove some items from your expenses</p>
+
+<canvas id="myChart" width="400" height="400"></canvas>
+
+</section></template>

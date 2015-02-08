@@ -104,9 +104,13 @@
     </tr>
   </thead>
   <tbody>
-    <tr repeat.for="debt of models.debts">
-      <td>${debt.name}</td>
-      <td>${debt.amount}</td>
+    <tr repeat.for="creditCard of models.creditCards">
+      <td>${creditCard.name}</td>
+      <td>${creditCard.amount}</td>
+    </tr>
+    <tr repeat.for="overdraft of models.overdrafts">
+      <td>${overdraft.name}</td>
+      <td>${overdraft.amount}</td>
     </tr>
   </tbody>
 </table>
@@ -127,7 +131,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="addCreditCardLabel">Add Credit Card</h4>
       </div>
-      <form role="form" submit.delegate="addDebt()">
+      <form role="form" submit.delegate="addCreditCard()">
         <div class="modal-body">
           <div class="form-group">
             <label for="debt-name">Name</label>
@@ -142,8 +146,22 @@
             <input type="number" step="0.01" min="0" class="form-control" value.bind="debt_interest" id="debt-interest" placeholder="Interest Rate" required>
           </div>
           <div class="form-group">
-            <label for="debt-fee">Monthly Fee</label>
+            <label for="debt-fee">Annual Fee</label>
             <input type="number" step="0.01" min="0" class="form-control" value.bind="debt_fee" id="debt-fee" placeholder="Monthly Fee" required>
+          </div>
+          <div class="form-inline">
+            <div class="form-group">
+              <label for="debt-payment">This Month's Payment</label>
+              <input type="number" step="0.01" min="0" class="form-control" value.bind="debt_payment" id="debt-payment" placeholder="This Month's Payment" required>
+            </div>
+            <div class="form-group">
+              <label for="debt-payment-percent">Minimum Payment Percent</label>
+              <input type="number" step="0.01" min="0" class="form-control" value.bind="debt_payment_percent" id="debt-payment-percent" placeholder="Minimum Payment Percent" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="debt-min-amount">Minimum Payment Amount</label>
+            <input type="number" step="0.01" min="0" class="form-control" value.bind="debt_min_amount" id="debt-min-amount" placeholder="Minimum Payment Amount" value="10" required>
           </div>
         </div>
         <div class="modal-footer">
@@ -162,7 +180,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="addOverdraftLabel">Add Overdraft</h4>
       </div>
-      <form role="form" submit.delegate="addDebt()">
+      <form role="form" submit.delegate="addOverdraft()">
         <div class="modal-body">
           <div class="form-group">
             <label for="debt-name">Name</label>

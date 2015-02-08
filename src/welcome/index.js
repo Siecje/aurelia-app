@@ -23,13 +23,28 @@ export class Welcome{
     this.expense_name = '';
     this.expense_amount = '';
   }
-  addDebt(){
-    this.models.addDebt(this.debt_name, this.debt_amount, this.debt_interest, this.debt_fee);
+
+  addCreditCard(){s
+    this.models.addCreditCard(this.debt_name, this.debt_amount, this.debt_interest,
+                              this.debt_fee, this.debt_payment, this.debt_payment_percent,
+                              this.debt_min_amount);
     this.debt_name = '';
     this.debt_amount = '';
     this.debt_interest = '';
-    this.debt_interest = '';
+    this.debt_fee = '';
+    this.debt_payment = '';
+    this.debt_payment_percent = '';
+    this.debt_min_amount = '';
   }
 
-  // Note that bills are approx unless specified this month
+  addOverdraft(){
+    this.models.addOverdraft(this.debt_name, this.debt_amount, this.debt_interest,
+                             this.debt_fee);
+    this.debt_name = '';
+    this.debt_amount = '';
+    this.debt_interest = '';
+    this.debt_fee = '';
+  }
+
+  // TODO: Note that bills are approx unless specified this month
 }
