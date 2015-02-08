@@ -13,15 +13,23 @@ System.register([], function (_export) {
         function Models() {
           _classCallCheck(this, Models);
 
-          this.incomes = [];
-          this.expenses = [];
-          this.debts = [];
+          this.incomes = [{ name: "Work", amount: 1000 }];
+          this.bills = [{ name: "Hydro", amount: 60 }];
+          this.expenses = [{ name: "Food", amount: 200 }];
+          this.debts = [{ name: "CC", amount: 1000, interest: 0.2, fee: 100 / 12 }];
         }
 
         _prototypeProperties(Models, null, {
           addIncome: {
             value: function addIncome(name, amount) {
               this.incomes.push({ name: name, amount: amount });
+            },
+            writable: true,
+            configurable: true
+          },
+          addBill: {
+            value: function addBill(name, amount) {
+              this.bills.push({ name: name, amount: amount });
             },
             writable: true,
             configurable: true
@@ -34,8 +42,8 @@ System.register([], function (_export) {
             configurable: true
           },
           addDebt: {
-            value: function addDebt(name, amount) {
-              this.debts.push({ name: name, amount: amount });
+            value: function addDebt(name, amount, interest, fee) {
+              this.debts.push({ name: name, amount: amount, interest: interest, fee: fee });
             },
             writable: true,
             configurable: true
@@ -47,4 +55,4 @@ System.register([], function (_export) {
     }
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZGVscy5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7NkNBQWEsTUFBTTs7Ozs7Ozs7QUFBTixZQUFNO0FBRU4saUJBRkEsTUFBTTtnQ0FBTixNQUFNOztBQUdmLGNBQUksQ0FBQyxPQUFPLEdBQUcsRUFBRSxDQUFDO0FBQ2xCLGNBQUksQ0FBQyxRQUFRLEdBQUcsRUFBRSxDQUFDO0FBQ25CLGNBQUksQ0FBQyxLQUFLLEdBQUcsRUFBRSxDQUFDO1NBQ2pCOzs2QkFOVSxNQUFNO0FBUWpCLG1CQUFTO21CQUFBLG1CQUFDLElBQUksRUFBRSxNQUFNLEVBQUM7QUFDckIsa0JBQUksQ0FBQyxPQUFPLENBQUMsSUFBSSxDQUFDLEVBQUMsSUFBSSxFQUFFLElBQUksRUFBRSxNQUFNLEVBQUUsTUFBTSxFQUFDLENBQUMsQ0FBQzthQUNqRDs7OztBQUNELG9CQUFVO21CQUFBLG9CQUFDLElBQUksRUFBRSxNQUFNLEVBQUM7QUFDdEIsa0JBQUksQ0FBQyxRQUFRLENBQUMsSUFBSSxDQUFDLEVBQUMsSUFBSSxFQUFFLElBQUksRUFBRSxNQUFNLEVBQUUsTUFBTSxFQUFDLENBQUMsQ0FBQzthQUNsRDs7OztBQUNELGlCQUFPO21CQUFBLGlCQUFDLElBQUksRUFBRSxNQUFNLEVBQUM7QUFDbkIsa0JBQUksQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDLEVBQUMsSUFBSSxFQUFFLElBQUksRUFBRSxNQUFNLEVBQUUsTUFBTSxFQUFDLENBQUMsQ0FBQzthQUMvQzs7Ozs7O2VBaEJVLE1BQU0iLCJmaWxlIjoibW9kZWxzLmpzIiwic291cmNlUm9vdCI6Ii9zcmMvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1vZGVscy5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7NkNBQWEsTUFBTTs7Ozs7Ozs7QUFBTixZQUFNO0FBRU4saUJBRkEsTUFBTTtnQ0FBTixNQUFNOztBQUdmLGNBQUksQ0FBQyxPQUFPLEdBQUcsQ0FBQyxFQUFDLElBQUksRUFBRSxNQUFNLEVBQUUsTUFBTSxFQUFFLElBQUksRUFBQyxDQUFDLENBQUM7QUFDOUMsY0FBSSxDQUFDLEtBQUssR0FBRyxDQUFDLEVBQUMsSUFBSSxFQUFFLE9BQU8sRUFBRSxNQUFNLEVBQUUsRUFBRSxFQUFDLENBQUMsQ0FBQztBQUMzQyxjQUFJLENBQUMsUUFBUSxHQUFHLENBQUMsRUFBQyxJQUFJLEVBQUUsTUFBTSxFQUFFLE1BQU0sRUFBRSxHQUFHLEVBQUMsQ0FBQyxDQUFDO0FBQzlDLGNBQUksQ0FBQyxLQUFLLEdBQUcsQ0FBQyxFQUFDLElBQUksRUFBRSxJQUFJLEVBQUUsTUFBTSxFQUFFLElBQUksRUFBRSxRQUFRLEVBQUUsR0FBSSxFQUFFLEdBQUcsRUFBRSxHQUFHLEdBQUMsRUFBRSxFQUFDLENBQUMsQ0FBQztTQUN4RTs7NkJBUFUsTUFBTTtBQVNqQixtQkFBUzttQkFBQSxtQkFBQyxJQUFJLEVBQUUsTUFBTSxFQUFDO0FBQ3JCLGtCQUFJLENBQUMsT0FBTyxDQUFDLElBQUksQ0FBQyxFQUFDLElBQUksRUFBRSxJQUFJLEVBQUUsTUFBTSxFQUFFLE1BQU0sRUFBQyxDQUFDLENBQUM7YUFDakQ7Ozs7QUFDRCxpQkFBTzttQkFBQSxpQkFBQyxJQUFJLEVBQUUsTUFBTSxFQUFDO0FBQ25CLGtCQUFJLENBQUMsS0FBSyxDQUFDLElBQUksQ0FBQyxFQUFDLElBQUksRUFBRSxJQUFJLEVBQUUsTUFBTSxFQUFFLE1BQU0sRUFBQyxDQUFDLENBQUM7YUFDL0M7Ozs7QUFDRCxvQkFBVTttQkFBQSxvQkFBQyxJQUFJLEVBQUUsTUFBTSxFQUFDO0FBQ3RCLGtCQUFJLENBQUMsUUFBUSxDQUFDLElBQUksQ0FBQyxFQUFDLElBQUksRUFBRSxJQUFJLEVBQUUsTUFBTSxFQUFFLE1BQU0sRUFBQyxDQUFDLENBQUM7YUFDbEQ7Ozs7QUFDRCxpQkFBTzttQkFBQSxpQkFBQyxJQUFJLEVBQUUsTUFBTSxFQUFFLFFBQVEsRUFBRSxHQUFHLEVBQUM7QUFDbEMsa0JBQUksQ0FBQyxLQUFLLENBQUMsSUFBSSxDQUFDLEVBQUMsSUFBSSxFQUFFLElBQUksRUFBRSxNQUFNLEVBQUUsTUFBTSxFQUFFLFFBQVEsRUFBRSxRQUFRLEVBQUUsR0FBRyxFQUFFLEdBQUcsRUFBQyxDQUFDLENBQUM7YUFDN0U7Ozs7OztlQXBCVSxNQUFNIiwiZmlsZSI6Im1vZGVscy5qcyIsInNvdXJjZVJvb3QiOiIvc3JjLyJ9

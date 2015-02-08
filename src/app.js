@@ -8,8 +8,7 @@ export class App {
       config.title = 'Debt';
       config.map([
         { route: ['','welcome'],  moduleId: './welcome/index',      nav: true, title:'Welcome' },
-        { route: 'report',        moduleId: './report/index',       nav: true, title:'Report'},
-        { route: 'child-router',  moduleId: 'child-router', nav: true, title:'Child Router' }
+        { route: 'report',        moduleId: './report/index',       nav: true, title:'Report'}
       ]);
     });
   }
